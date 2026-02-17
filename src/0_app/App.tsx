@@ -1,11 +1,8 @@
-import { Button } from "@shared/ui/shadcn/button";
+import { routes } from "@app/routes/routes";
+import { RouterProvider } from "react-router";
 
 function App() {
-    return (
-        <div>
-            <Button>Rick and Morty API</Button>
-        </div>
-    );
+    return <RouterProvider router={routes} />;
 }
 
 export default App;
