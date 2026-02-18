@@ -121,6 +121,53 @@
     body {
         @apply bg-background text-foreground;
     }
+    @font-face {
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src:
+            url("./../../5_shared/assets/fonts/Quicksand-Light.woff")
+                format("woff2"),
+            url("./../../5_shared/assets/fonts/Quicksand-Light.woff")
+                format("woff");
+    }
+    @font-face {
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src:
+            url("./../../5_shared/assets/fonts/Quicksand-Regular.woff")
+                format("woff2"),
+            url("./../../5_shared/assets/fonts/Quicksand-Regular.woff")
+                format("woff");
+    }
+    @font-face {
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src:
+            url("./../../5_shared/assets/fonts/Quicksand-Medium.woff")
+                format("woff2"),
+            url("./assets/fonts/poppins/poppins-v20-latin-MeQuicksand-Medium.woff")
+                format("woff");
+    }
+    @font-face {
+        font-family: "Quicksand";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src:
+            url("./../../5_shared/assets/fonts/Quicksand-SemiBold.woff")
+                format("woff2"),
+            url("./assets/fonts/poppins/poppins-v20-latin-SeQuicksand-SemiBold.woff")
+                format("woff");
+    }
+}
+@theme {
+    --default-font-family: "Quicksand", sans-serif;
 }
 @layer components {
     /* // липкое меню */
