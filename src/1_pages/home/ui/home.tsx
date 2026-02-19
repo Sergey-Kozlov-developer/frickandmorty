@@ -1,6 +1,7 @@
 import { SearchCharacter } from "@features/search-character";
 import { SortCharacter } from "@features/sort-character";
 import Hero from "@shared/ui/hero/hero";
+import { CharacterList } from "@widgets/character-list/ui/character-list";
 
 export const Home = () => {
     return (
@@ -11,6 +12,7 @@ export const Home = () => {
                     <SearchCharacter />
                     <SortCharacter />
                 </div>
+                <CharacterList characters={[]} />
             </div>
         </div>
     );
