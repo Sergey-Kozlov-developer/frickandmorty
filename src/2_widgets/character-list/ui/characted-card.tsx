@@ -17,12 +17,12 @@ interface ICharacterCardProps {
 export const CharacterCard = ({ character }: ICharacterCardProps) => {
     return (
         <>
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="relative h-48 w-full overflow-hidden">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow py-0">
+                <div className="relative  w-full overflow-hidden">
                     <img
                         src={character.image}
                         alt={character.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full hover:scale-105 transition-transform duration-300"
                     />
                 </div>
 
@@ -53,7 +53,7 @@ export const CharacterCard = ({ character }: ICharacterCardProps) => {
                     </CardDescription>
                 </CardHeader>
 
-                <CardContent className="space-y-2">
+                <CardContent className="space-y-2 pb-5">
                     <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Вид:</span>
                         <span className="font-medium">{character.species}</span>
@@ -84,7 +84,7 @@ export const CharacterCard = ({ character }: ICharacterCardProps) => {
                 </CardContent>
 
                 {character.type && (
-                    <CardFooter>
+                    <CardFooter className="pb-5">
                         <Badge variant="secondary" className="text-xs">
                             {character.type}
                         </Badge>

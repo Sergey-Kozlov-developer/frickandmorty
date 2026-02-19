@@ -12,7 +12,7 @@ export const Home = () => {
                     <SearchCharacter />
                     <SortCharacter />
                 </div>
-                <CharacterList characters={[]} />
+                <CharacterList />
             </div>
         </div>
     );
