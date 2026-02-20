@@ -1,5 +1,5 @@
 import { SearchCharacter } from "@features/search-character";
-import { SortCharacter } from "@features/sort-character";
+import { FilterCharacters } from "@features/filter-characters";
 import Hero from "@shared/ui/hero/hero";
 import { CharacterList } from "@widgets/character-list/ui/character-list";
 
@@ -8,9 +8,9 @@ export const Home = () => {
         <div className="w-full">
             <Hero />
             <div className="container px-4 mx-auto mt-8">
-                <div className="flex gap-5 max-sm:flex-col">
+                <div className="flex flex-col gap-5">
                     <SearchCharacter />
-                    <SortCharacter />
+                    <FilterCharacters />
                 </div>
                 <CharacterList />
             </div>

@@ -8,17 +8,20 @@ export const CharacterList = () => {
     // получаем данные из Zustand
     const { filters } = useFilterStore();
     // создаем параметры для запроса с использованием useMemo
-    const filtersParams = useMemo(
-        () => ({
+    // отправляем только непустые значения фильтров
+    const filtersParams = useMemo(() => {
+        const params: Record<string, string | number> = {
             page: filters.page || 1,
-            name: filters.name || "",
-            status: filters.status || "",
-            species: filters.species || "",
-            type: filters.type || "",
-            gender: filters.gender || undefined,
-        }),
-        [filters]
-    );
+        };
+
+        if (filters.name) params.name = filters.name;
+        if (filters.status) params.status = filters.status;
+        if (filters.species) params.species = filters.species;
+        if (filters.type) params.type = filters.type;
+        if (filters.gender) params.gender = filters.gender;
+
+        return params;
+    }, [filters]);
     // получаем данные из RTK Query
     const { data, isLoading, error, isFetching } =
         useGetCharactersQuery(filtersParams);

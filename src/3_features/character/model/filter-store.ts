@@ -5,6 +5,7 @@ import { devtools } from "zustand/middleware";
 interface IFilterState {
     filters: ICharacterParams;
     setPage: (page: number) => void;
+    setName: (name: string) => void;
     setStatus: (status: string) => void;
     setGender: (gender: string) => void;
     setSpecies: (species: string) => void;
@@ -34,6 +35,15 @@ export const useFilterStore = create<IFilterState>()(
                     }),
                     false,
                     "filters/setPage"
+                ),
+            // filter name
+            setName: (name: string) =>
+                set(
+                    (state) => ({
+                        filters: { ...state.filters, name, page: 1 },
+                    }),
+                    false,
+                    "filters/setName"
                 ),
             // filter status, species, type, gender
             // filter status
