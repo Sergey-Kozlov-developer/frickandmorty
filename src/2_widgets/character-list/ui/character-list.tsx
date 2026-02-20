@@ -1,20 +1,27 @@
 import { useGetCharactersQuery } from "@entities/character/model/characterApi";
 import type { ICharacter } from "@entities/character/model/types";
-import { useFilterStore } from "@features/character/model/filter-store";
-import { CharacterCard } from "@widgets/character-list/ui/characted-card";
+import { useFilterStore } from "@features/character";
+import { CharacterCard } from "@widgets/character-list/ui/character-card";
+import { useMemo } from "react";
 
 export const CharacterList = () => {
     // получаем данные из Zustand
-    const { page, name, status, species, type, gender } = useFilterStore();
+    const { filters } = useFilterStore();
+    // создаем параметры для запроса с использованием useMemo
+    const filtersParams = useMemo(
+        () => ({
+            page: filters.page || 1,
+            name: filters.name || "",
+            status: filters.status || "",
+            species: filters.species || "",
+            type: filters.type || "",
+            gender: filters.gender || undefined,
+        }),
+        [filters]
+    );
     // получаем данные из RTK Query
-    const { data, isLoading, error, isFetching } = useGetCharactersQuery({
-        page,
-        name,
-        status,
-        species,
-        type,
-        gender,
-    });
+    const { data, isLoading, error, isFetching } =
+        useGetCharactersQuery(filtersParams);
 
     if (isLoading) {
         return (
