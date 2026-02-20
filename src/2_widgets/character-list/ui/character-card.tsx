@@ -42,38 +42,24 @@ export const CharacterCard = ({ character }: ICharacterCardProps) => {
                 }
 			  `}
                             />
-                            <span>
-                                {character.status === "Alive"
-                                    ? "Жив"
-                                    : character.status === "Dead"
-                                      ? "Мёртв"
-                                      : "Неизвестно"}
-                            </span>
+                            <span>{character.status}</span>
                         </div>
                     </CardDescription>
                 </CardHeader>
 
                 <CardContent className="space-y-2 pb-5">
                     <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Вид:</span>
+                        <span className="text-muted-foreground">Species:</span>
                         <span className="font-medium">{character.species}</span>
                     </div>
 
                     <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Пол:</span>
-                        <span className="font-medium">
-                            {character.gender === "Female"
-                                ? "Женский"
-                                : character.gender === "Male"
-                                  ? "Мужской"
-                                  : character.gender === "unknown"
-                                    ? "Бесполый"
-                                    : "Неизвестно"}
-                        </span>
+                        <span className="text-muted-foreground">Gender:</span>
+                        <span className="font-medium">{character.gender}</span>
                     </div>
 
                     <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Локация:</span>
+                        <span className="text-muted-foreground">Location:</span>
                         <span
                             className="font-medium truncate max-w-[150px]"
                             title={character.location.name}
