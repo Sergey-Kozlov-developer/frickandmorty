@@ -29,7 +29,7 @@ export const TextFilter = ({
     return (
         <div className="flex flex-col gap-1">
             <label className="text-sm text-muted-foreground">{label}</label>
-            <div className="flex gap-2">
+            <div className="flex gap-3">
                 <Input
                     type="text"
                     placeholder={placeholder}
